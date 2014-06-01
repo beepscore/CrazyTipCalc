@@ -26,18 +26,48 @@
         android:layout_alignBottom="@+id/billTextView"
         android:layout_toRightOf="@+id/billTextView"
         android:ems="5"
-        android:text="@string/bill_edit_text">
+        android:text="@string/bill_edit_text"
+        android:inputType="numberDecimal">
 
         <requestFocus />
     </EditText>
 
     <TextView
         android:id="@+id/tipTextView"
+        android:text="@string/tip_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/tip_text_view"
+        android:layout_alignBaseline="@+id/billEditText"
         android:layout_alignBottom="@+id/billEditText"
-        android:layout_toRightOf="@+id/billEditText"
-        android:layout_marginLeft="30dp" />
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/tipEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="4"
+        android:layout_marginLeft="27dp"
+        android:layout_alignTop="@+id/billEditText"
+        android:layout_toRightOf="@+id/tipTextView"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/finalBillTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/final_bill_text_view"
+        android:layout_below="@+id/billEditText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="51dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/finalBillEditText"
+        android:numeric="decimal"
+        android:inputType="numberDecimal"
+        android:layout_alignBaseline="@+id/finalBillTextView"
+        android:layout_alignBottom="@+id/finalBillTextView"
+        android:layout_alignStart="@+id/tipEditText" />
 
 </RelativeLayout>
