@@ -43,6 +43,7 @@
 
     <EditText
         android:id="@+id/tipEditText"
+        android:text="@string/tip_edit_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="4"
