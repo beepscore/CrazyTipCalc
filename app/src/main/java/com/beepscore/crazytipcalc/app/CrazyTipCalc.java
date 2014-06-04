@@ -7,11 +7,14 @@ import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.SeekBar;
+import android.widget.SeekBar.OnSeekBarChangeListener;
 
 
 public class CrazyTipCalc extends Activity {
 
-    // use to save data when user leaves app
+    // Constants used when saving and restoring
+
     private static final String TOTAL_BILL = "TOTAL_BILL";
     private static final String CURRENT_TIP = "CURRENT_TIP";
     private static final String BILL_WITHOUT_TIP = "BILL_WITHOUT_TIP";
@@ -35,6 +38,7 @@ public class CrazyTipCalc extends Activity {
             tipAmount = 0.15;
             finalBill = 0.0;
         } else {
+            // app is being restored
             billBeforeTip = savedInstanceState.getDouble(BILL_WITHOUT_TIP);
             tipAmount = savedInstanceState.getDouble(CURRENT_TIP);
             finalBill = savedInstanceState.getDouble(TOTAL_BILL);
@@ -43,6 +47,9 @@ public class CrazyTipCalc extends Activity {
         billBeforeTipET = (EditText) findViewById(R.id.billEditText);
         tipAmountET = (EditText) findViewById(R.id.tipEditText);
         finalBillET = (EditText) findViewById(R.id.finalBillEditText);
+
+        tipSeekBar = (SeekBar) findViewById(R.id.changeTipSeekBar);
+        tipSeekBar.setOnSeekBarChangeListener(tipSeekBarListener);
 
         billBeforeTipET.addTextChangedListener(billBeforeTipListener);
     }
@@ -58,20 +65,10 @@ public class CrazyTipCalc extends Activity {
         public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
             try {
                 billBeforeTip = Double.parseDouble(charSequence.toString());
-            }
-            catch(NumberFormatException e) {
+            } catch (NumberFormatException e) {
                 billBeforeTip = 0.0;
             }
             updateTipAndFinalBill();
-        }
-
-
-        private void updateTipAndFinalBill() {
-            // Model
-            double tipAmount = Double.parseDouble(tipAmountET.getText().toString());
-            double finalBill = billBeforeTip + (tipAmount * billBeforeTip);
-            // View
-            finalBillET.setText(String.format("%.02f", finalBill));
         }
 
         @Override
@@ -80,14 +77,42 @@ public class CrazyTipCalc extends Activity {
         }
     };
 
+    private void updateTipAndFinalBill() {
+        // Model
+        double tipAmount = Double.parseDouble(tipAmountET.getText().toString());
+        double finalBill = billBeforeTip + (tipAmount * billBeforeTip);
+        // View
+        finalBillET.setText(String.format("%.02f", finalBill));
+    }
+
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
 
         outState.putDouble(TOTAL_BILL, finalBill);
         outState.putDouble(CURRENT_TIP, tipAmount);
         outState.putDouble(BILL_WITHOUT_TIP, billBeforeTip);
-
     }
+
+    private SeekBar tipSeekBar;
+    private OnSeekBarChangeListener tipSeekBarListener = new OnSeekBarChangeListener() {
+
+        @Override
+        public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+            tipAmount = (tipSeekBar.getProgress() * 0.01);
+            tipAmountET.setText(String.format("%.02f", tipAmount));
+            updateTipAndFinalBill();
+        }
+
+        @Override
+        public void onStartTrackingTouch(SeekBar seekBar) {
+
+        }
+
+        @Override
+        public void onStopTrackingTouch(SeekBar seekBar) {
+
+        }
+    };
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

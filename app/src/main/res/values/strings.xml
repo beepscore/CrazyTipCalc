@@ -13,5 +13,5 @@
     <string name="final_bill_text_view">Final Bill</string>
     <string name="final_bill_edit_text">0.0</string>
 
-    <string Name="change_tip_text_view">Change Tip</string>
+    <string name="change_tip_text_view">Change Tip</string>
 </resources>
