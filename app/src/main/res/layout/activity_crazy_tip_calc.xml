@@ -183,4 +183,31 @@
         android:layout_below="@+id/problemsSpinner"
         android:layout_alignStart="@+id/finalBillTextView" />
 
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/start_chronometer_button"
+        android:id="@+id/startChronometerButton"
+        android:layout_below="@+id/timeWaitingChronometer"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pause_chronometer_button"
+        android:id="@+id/pauseChronometerButton"
+        android:layout_alignBottom="@+id/startChronometerButton"
+        android:layout_toRightOf="@+id/startChronometerButton" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reset_chronometer_button"
+        android:id="@+id/resetChronometerButton"
+        android:layout_alignBottom="@+id/pauseChronometerButton"
+        android:layout_toRightOf="@+id/pauseChronometerButton" />
+
 </RelativeLayout>
