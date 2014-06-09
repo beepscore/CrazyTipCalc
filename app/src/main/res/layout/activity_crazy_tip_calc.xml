@@ -113,4 +113,12 @@
         android:layout_below="@+id/IntroTextView"
         android:layout_toRightOf="@+id/friendlyCheckBox" />
 
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/intro_opinion_text_view"
+        android:id="@+id/opinionCheckBox"
+        android:layout_alignTop="@+id/specialsCheckBox"
+        android:layout_toRightOf="@+id/tipTextView" />
+
 </RelativeLayout>
