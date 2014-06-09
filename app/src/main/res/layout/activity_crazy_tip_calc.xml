@@ -168,4 +168,12 @@
         android:layout_alignParentStart="true"
         android:entries="@array/problem_solving" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/time_waiting_text_view"
+        android:id="@+id/timeWaitingTextView"
+        android:layout_below="@+id/problemsSpinner"
+        android:layout_alignParentStart="true" />
+
 </RelativeLayout>
