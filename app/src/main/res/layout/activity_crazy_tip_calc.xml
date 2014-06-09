@@ -176,4 +176,11 @@
         android:layout_below="@+id/problemsSpinner"
         android:layout_alignParentStart="true" />
 
+    <Chronometer
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/timeWaitingChronometer"
+        android:layout_below="@+id/problemsSpinner"
+        android:layout_alignStart="@+id/finalBillTextView" />
+
 </RelativeLayout>
