@@ -160,4 +160,12 @@
 
         </RadioGroup>
 
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/problemsSpinner"
+        android:layout_below="@+id/availableRadioGroup"
+        android:layout_alignParentStart="true"
+        android:entries="@array/problem_solving" />
+
 </RelativeLayout>
