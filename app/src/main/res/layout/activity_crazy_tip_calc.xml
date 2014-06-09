@@ -105,4 +105,12 @@
         android:layout_below="@+id/IntroTextView"
         android:layout_alignParentStart="true" />
 
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/intro_specials_text_view"
+        android:id="@+id/specialsCheckBox"
+        android:layout_below="@+id/IntroTextView"
+        android:layout_toRightOf="@+id/friendlyCheckBox" />
+
 </RelativeLayout>
