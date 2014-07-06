@@ -117,16 +117,16 @@ public class CrazyTipCalc extends Activity {
     }
 
     private TextWatcher billBeforeTipListener = new TextWatcher() {
+        // https://developer.android.com/reference/android/text/TextWatcher.html
 
         @Override
-        public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
         }
 
         @Override
-        public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
             try {
-                billBeforeTip = Double.parseDouble(charSequence.toString());
+                billBeforeTip = Double.parseDouble(s.toString());
             } catch (NumberFormatException e) {
                 billBeforeTip = 0.0;
             }
@@ -134,8 +134,7 @@ public class CrazyTipCalc extends Activity {
         }
 
         @Override
-        public void afterTextChanged(Editable editable) {
-
+        public void afterTextChanged(Editable s) {
         }
     };
 
