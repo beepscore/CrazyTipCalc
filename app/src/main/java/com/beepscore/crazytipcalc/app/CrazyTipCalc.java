@@ -185,7 +185,7 @@ public class CrazyTipCalc extends Activity {
 
         friendlyCheckBox.setOnCheckedChangeListener(new CheckBox.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 checklistValues[0] = (friendlyCheckBox.isChecked())?4:0;
                 setTipFromWaitressChecklist();
                 updateTipAndFinalBill();
@@ -195,7 +195,7 @@ public class CrazyTipCalc extends Activity {
         //specialsCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
         specialsCheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 checklistValues[1] = (specialsCheckBox.isChecked())?1:0;
                 setTipFromWaitressChecklist();
                 updateTipAndFinalBill();
@@ -205,7 +205,7 @@ public class CrazyTipCalc extends Activity {
         //opinionCheckBox.setOnCheckedChangeListener(new CheckBox.OnCheckedChangeListener() {
         opinionCheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 checklistValues[2] = (opinionCheckBox.isChecked())?2:0;
                 setTipFromWaitressChecklist();
                 updateTipAndFinalBill();
