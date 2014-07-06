@@ -12,9 +12,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CheckBox;
-//import android.widget.CheckBox.OnCheckedChangeListener;
 import android.widget.Chronometer;
-import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -181,9 +179,8 @@ public class CrazyTipCalc extends Activity {
 
     private void setUpIntroCheckBoxes() {
 
-        // https://developer.android.com/reference/android/widget/CompoundButton.html
-
         friendlyCheckBox.setOnCheckedChangeListener(new CheckBox.OnCheckedChangeListener() {
+            // https://developer.android.com/reference/android/widget/CompoundButton.html
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 checklistValues[0] = (friendlyCheckBox.isChecked())?4:0;
@@ -192,8 +189,7 @@ public class CrazyTipCalc extends Activity {
             }
         });
 
-        //specialsCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-        specialsCheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+        specialsCheckBox.setOnCheckedChangeListener(new CheckBox.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 checklistValues[1] = (specialsCheckBox.isChecked())?1:0;
@@ -202,8 +198,7 @@ public class CrazyTipCalc extends Activity {
             }
         });
 
-        //opinionCheckBox.setOnCheckedChangeListener(new CheckBox.OnCheckedChangeListener() {
-        opinionCheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+        opinionCheckBox.setOnCheckedChangeListener(new CheckBox.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 checklistValues[2] = (opinionCheckBox.isChecked())?2:0;
