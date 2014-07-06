@@ -93,7 +93,7 @@ public class CrazyTipCalc extends Activity {
         specialsCheckBox = (CheckBox) findViewById(R.id.specialsCheckBox);
         opinionCheckBox = (CheckBox) findViewById(R.id.opinionCheckBox);
 
-        //setUpIntroCheckBoxes();
+        setUpIntroCheckBoxes();
 
         availableRadioGroup = (RadioGroup) findViewById(R.id.availableRadioGroup);
         availableBadRadio = (RadioButton) findViewById(R.id.availableBadRadio);
@@ -179,15 +179,13 @@ public class CrazyTipCalc extends Activity {
         }
     };
 
-    /*
     private void setUpIntroCheckBoxes() {
 
+        // https://developer.android.com/reference/android/widget/CompoundButton.html
+
         friendlyCheckBox.setOnCheckedChangeListener(new CheckBox.OnCheckedChangeListener() {
-        //friendlyCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-        //friendlyCheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
-            public void onCheckChanged(CompoundButton arg0, boolean arg1) {
-            //public void onCheckChanged(CheckBox arg0, boolean arg1) {
+            public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
                 checklistValues[0] = (friendlyCheckBox.isChecked())?4:0;
                 setTipFromWaitressChecklist();
                 updateTipAndFinalBill();
@@ -197,8 +195,7 @@ public class CrazyTipCalc extends Activity {
         //specialsCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
         specialsCheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
-            public void onCheckChanged(CompoundButton arg0, boolean arg1) {
-            //public void onCheckChanged(CheckBox arg0, boolean arg1) {
+            public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
                 checklistValues[1] = (specialsCheckBox.isChecked())?1:0;
                 setTipFromWaitressChecklist();
                 updateTipAndFinalBill();
@@ -208,15 +205,13 @@ public class CrazyTipCalc extends Activity {
         //opinionCheckBox.setOnCheckedChangeListener(new CheckBox.OnCheckedChangeListener() {
         opinionCheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
-            public void onCheckChanged(CompoundButton arg0, boolean arg1) {
-            //public void onCheckChanged(CheckBox arg0, boolean arg1) {
+            public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
                 checklistValues[2] = (opinionCheckBox.isChecked())?2:0;
                 setTipFromWaitressChecklist();
                 updateTipAndFinalBill();
             }
         });
     }
-    */
 
     private void setTipFromWaitressChecklist() {
         int checklistTotal = 0;
