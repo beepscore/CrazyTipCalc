@@ -235,9 +235,9 @@ public class CrazyTipCalc extends Activity {
     private void addItemSelectedListenerToSpinner(){
         problemsSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
 
+            //http://developer.android.com/reference/android/widget/AdapterView.OnItemSelectedListener.html
             @Override
-            public void onItemSelected(AdapterView <?> arg0, View arg1,
-                    int arg2, long arg3) {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 checklistValues[6] = (String.valueOf(problemsSpinner.getSelectedItem()).equals("Bad"))?-1:0;
                 checklistValues[7] = (String.valueOf(problemsSpinner.getSelectedItem()).equals("OK"))?3:0;
                 checklistValues[8] = (String.valueOf(problemsSpinner.getSelectedItem()).equals("Good"))?6:0;
@@ -248,7 +248,7 @@ public class CrazyTipCalc extends Activity {
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> arg0) {
+            public void onNothingSelected(AdapterView<?> parent) {
                 // TODO Auto-generated method stub
             }
         });
