@@ -258,28 +258,27 @@ public class CrazyTipCalc extends Activity {
         startChronometerButton.setOnClickListener(new OnClickListener(){
 
             @Override
-            public void onClick(View arg0) {
+            public void onClick(View view) {
                 int stoppedMilliseconds = 0;
                 String chronoText = timeWaitingChronometer.getText().toString();
                 String array[] = chronoText.split(":");
                 if (array.length == 2) {
                     // Find the seconds
-                  stoppedMilliseconds = Integer.parseInt(array[0]) * 60 * 1000
-                        + Integer.parseInt(array[1]) * 1000;
+                    stoppedMilliseconds = Integer.parseInt(array[0]) * 60 * 1000
+                            + Integer.parseInt(array[1]) * 1000;
                 } else if (array.length == 3) {
                     // Find the minutes
-                  stoppedMilliseconds = Integer.parseInt(array[0]) * 60 * 60 * 1000
-                        + Integer.parseInt(array[1]) * 60 * 1000
-                        + Integer.parseInt(array[2]) * 1000;
+                    stoppedMilliseconds = Integer.parseInt(array[0]) * 60 * 60 * 1000
+                            + Integer.parseInt(array[1]) * 60 * 1000
+                            + Integer.parseInt(array[2]) * 1000;
                 }
 
                 // Amount of time elapsed since the start button was
                 // pressed, minus the time paused
                 timeWaitingChronometer.setBase(SystemClock.elapsedRealtime() - stoppedMilliseconds);
 
-                // Set the number of seconds you have waited
-                // This would be set for minutes in the real world
-                // obviously. That can be found in array[2]
+                // For development fast iteration, use seconds waited.
+                // TODO: For production release use minutes waited, available in array[2]
                 secondsYouWaited = Long.parseLong(array[1]);
                 updateTipBasedOnTimeWaited(secondsYouWaited);
 
