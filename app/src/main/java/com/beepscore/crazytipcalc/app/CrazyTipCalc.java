@@ -241,9 +241,8 @@ public class CrazyTipCalc extends Activity {
                 checklistValues[6] = (String.valueOf(problemsSpinner.getSelectedItem()).equals("Bad"))?-1:0;
                 checklistValues[7] = (String.valueOf(problemsSpinner.getSelectedItem()).equals("OK"))?3:0;
                 checklistValues[8] = (String.valueOf(problemsSpinner.getSelectedItem()).equals("Good"))?6:0;
-                // Calculate tip using the waitress checklist options
+
                 setTipFromWaitressChecklist();
-                // Update all the other EditTexts
                 updateTipAndFinalBill();
             }
 
