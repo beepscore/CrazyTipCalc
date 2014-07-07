@@ -289,7 +289,7 @@ public class CrazyTipCalc extends Activity {
         pauseChronometerButton.setOnClickListener(new OnClickListener(){
 
             @Override
-            public void onClick(View arg0) {
+            public void onClick(View v) {
                 timeWaitingChronometer.stop();
             }
         });
@@ -297,7 +297,7 @@ public class CrazyTipCalc extends Activity {
         resetChronometerButton.setOnClickListener(new OnClickListener() {
 
             @Override
-            public void onClick(View arg0) {
+            public void onClick(View v) {
                 timeWaitingChronometer.setBase(SystemClock.elapsedRealtime());
                 secondsYouWaited = 0;
             }
